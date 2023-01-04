@@ -3,12 +3,12 @@ import { View, Text } from 'react-native';
 
 import { styles } from "./styles";
 
-const Accounts = () => {
+const Incomes = () => {
     return (
         <View style={styles.container}>
-            <Text>Accounts</Text>
+            <Text>Incomes</Text>
         </View>
     );
 };
 
-export default Accounts;
+export default Incomes;

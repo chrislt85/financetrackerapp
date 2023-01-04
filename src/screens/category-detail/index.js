@@ -3,12 +3,12 @@ import { View, Text } from 'react-native';
 
 import { styles } from "./styles";
 
-const Income = () => {
+const CategoryDetail = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <Text>Income</Text>
+            <Text>Category Detail</Text>
         </View>
     );
 };
 
-export default Income;
+export default CategoryDetail;

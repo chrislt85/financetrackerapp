@@ -1,5 +1,6 @@
 import { useFonts } from 'expo-font';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import AppNavigator from './navigation';
 
 import { Home } from './screens';
 
@@ -24,9 +25,7 @@ export default function App() {
     );
   }
 
-  return (
-    <Home />
-  );
+  return <AppNavigator />;
 }
 
 const styles = StyleSheet.create({
