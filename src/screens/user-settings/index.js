@@ -6,7 +6,7 @@ import { styles } from "./styles";
 const UserSettings = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <Text>User Settings</Text>
+            <Text style={styles.title}>User Settings</Text>
         </View>
     );
 };

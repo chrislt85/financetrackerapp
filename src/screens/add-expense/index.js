@@ -3,12 +3,12 @@ import { View, Text } from 'react-native';
 
 import { styles } from "./styles";
 
-const UserDetails = ({ navigation }) => {
+const AddExpense = () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>User Details</Text>
+            <Text style={styles.title}>Add Expense</Text>
         </View>
     );
 };
 
-export default UserDetails;
+export default AddExpense;

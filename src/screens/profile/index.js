@@ -1,20 +1,21 @@
 import React from "react";
 import { View, Text, Button } from 'react-native';
+import { COLORS } from "../../constants/themes/colors";
 
 import { styles } from "./styles";
 
 const Profile = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <Text>Profile</Text>
+            <Text style={styles.title}>Profile</Text>
             <Button
                 title="User details"
-                color="#"
+                color={COLORS.primaryDark}
                 onPress={() => navigation.navigate('UserDetails')}
             />
             <Button
                 title="User Settings"
-                color="#"
+                color={COLORS.primaryDark}
                 onPress={() => navigation.navigate('UserSettings')}
             />
         </View>

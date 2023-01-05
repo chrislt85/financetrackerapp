@@ -3,12 +3,12 @@ import { View, Text } from 'react-native';
 
 import { styles } from "./styles";
 
-const NewExpense = () => {
+const AddCategory = () => {
     return (
         <View style={styles.container}>
-            <Text>New Expense</Text>
+            <Text style={styles.title}>Add Category</Text>
         </View>
     );
 };
 
-export default NewExpense;
+export default AddCategory;

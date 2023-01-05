@@ -1,20 +1,26 @@
 import React from "react";
 import { View, Text, Button } from 'react-native';
+import { COLORS } from "../../constants/themes/colors";
 
 import { styles } from "./styles";
 
 const Expenses = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <Text>Expenses</Text>
+            <Text style={styles.title}>Expenses</Text>
             <Button
-                title="New expense"
-                color="#"
-                onPress={() => navigation.navigate('NewExpense')}
+                title="Add expense"
+                color={COLORS.primaryDark}
+                onPress={() => navigation.navigate('AddExpense')}
+            />
+            <Button
+                title="Categories"
+                color={COLORS.primaryDark}
+                onPress={() => navigation.navigate('Categories')}
             />
             <Button
                 title="Category Detail"
-                color="#"
+                color={COLORS.primaryDark}
                 onPress={() => navigation.navigate('CategoryDetail')}
             />
         </View>
