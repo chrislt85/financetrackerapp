@@ -9,8 +9,17 @@ const HomeNavigator = () => {
     return (
         <Stack.Navigator
             initialRouteName="Home"
+            screenOptions={{
+                presentation: 'card',
+            }}
         >
-            <Stack.Screen name='Home' component={Home} />
+            <Stack.Screen 
+                name='Home' 
+                component={Home} 
+                options={{
+                    headerShown: false,
+                }}
+            />
         </Stack.Navigator>
     );
 }

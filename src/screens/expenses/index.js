@@ -21,7 +21,7 @@ const Expenses = ({ navigation }) => {
             <Button
                 title="Category Detail"
                 color={COLORS.primaryDark}
-                onPress={() => navigation.navigate('CategoryDetail')}
+                onPress={() => navigation.navigate('CategoryDetail', { title: 'Categoría 1'})}
             />
         </View>
     );
