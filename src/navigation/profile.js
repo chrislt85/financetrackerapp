@@ -35,7 +35,7 @@ const ProfileNavigator = () => {
                 name='UserDetails' 
                 component={UserDetails} 
                 options={{
-                    title: 'Detalle de usuario',
+                    title: 'Detalle de Usuario',
                 }}
             />
             <Stack.Screen 
