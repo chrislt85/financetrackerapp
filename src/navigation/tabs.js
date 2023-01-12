@@ -21,6 +21,11 @@ const Tabs = () => {
                 },
                 tabBarActiveTintColor: COLORS.text,
                 tabBarInactiveTintColor: COLORS.gray,
+                tabBarStyle: {
+                    paddingTop: 4,
+                    paddingBottom: 8,
+                    height: 57,
+                }
             }}
         >
             <BottomTab.Screen 

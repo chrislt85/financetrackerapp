@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
-import { COLORS } from "../../constants/themes/colors";
 import { Ionicons, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 //import { ConfigButton } from '../../components';
 
+import { COLORS } from "../../constants/themes/colors";
 import { styles } from "./styles";
 
 const Profile = ({ navigation }) => {
@@ -14,11 +14,18 @@ const Profile = ({ navigation }) => {
                 size={250}
                 color={COLORS.primaryDark}
             />*/}
+            <View style={styles.profilePicturePreview}>
+                <Ionicons 
+                    name='md-person-circle-outline'
+                    size={40}
+                    color={COLORS.black}
+                />
+            </View>
             <Image
                 //source={{ uri: 'https://t4.ftcdn.net/jpg/02/11/54/33/360_F_211543376_kv7x0SwdITkWbqajGzglhcvZV25AsPsS.jpg' }} 
                 source={require('../../../assets/user.png')}
                 style={styles.profilePicture} 
-            /> 
+            />
             <Text style={styles.profileName}>Will Kim</Text>
             
             <TouchableOpacity style={styles.configButton} onPress={() => navigation.navigate('UserDetails')}>
