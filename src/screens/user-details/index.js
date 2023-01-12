@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, Button } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 import { COLORS } from "../../constants/themes/colors";
 import { styles } from "./styles";
@@ -8,11 +8,11 @@ import { styles } from "./styles";
 const UserDetails = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <View style={styles.preview}>
-                <Image
-                    //source={{ uri: 'https://t4.ftcdn.net/jpg/02/11/54/33/360_F_211543376_kv7x0SwdITkWbqajGzglhcvZV25AsPsS.jpg' }} 
-                    source={require('../../../assets/user.png')}
-                    style={styles.profilePicture} 
+            <View style={styles.profilePicture}>
+                <Ionicons 
+                    name='person'
+                    size={90}
+                    color={COLORS.backgroundLight}
                 />
                 <TouchableOpacity style={styles.takePhoto} onPress={() => null}>
                     <MaterialCommunityIcons 
