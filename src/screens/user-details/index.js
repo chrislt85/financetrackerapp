@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity, Button } from 'react-native';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
+import { SettingInput } from "../../components";
 import { COLORS } from "../../constants/themes/colors";
 import { styles } from "./styles";
 
@@ -38,23 +39,17 @@ const UserDetails = ({ navigation }) => {
                 </TouchableOpacity>
             </TouchableOpacity>
 
-            <View style={styles.settingContainer}>
-                <Text style={styles.title}>Nombre de Usuario</Text>
-                <Text style={styles.content}>Will Kim</Text>
-            </View>
+            <SettingInput title="Nombre de Usuario" content="Will Kim" />
+
             <View style={styles.settingContainer}>
                 <Text style={styles.title}>Ubicación</Text>
                 <Button title="Detectar ubicación" color={COLORS.primary} onPress={() => null} />
             </View>
-            <View style={styles.settingContainer}>
-                <Text style={styles.title}>Correo Electrónico</Text>
-                <Text style={styles.content}>will@test.com.ar</Text>
-            </View>
-            <View style={styles.settingContainer}>
-                <Text style={styles.title}>Contraseña</Text>
-                <Text style={styles.content}></Text>
-            </View>
-
+            {
+                // Aca puedo pasar el content como children (y pasar Text, Button o lo que sea)
+            }
+            <SettingInput title="Correo Electrónico" content="will@test.com.ar" />
+            <SettingInput title="Contraseña" content="***********" />
         </View>
     );
 };
