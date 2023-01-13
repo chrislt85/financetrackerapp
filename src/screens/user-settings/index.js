@@ -1,26 +1,21 @@
 import React, { useState } from "react";
-import { View, Text, Switch } from 'react-native';
+import { ScrollView } from 'react-native';
 
+import { SettingOption } from "../../components";
 import { styles } from "./styles";
 
 const UserSettings = ({ navigation }) => {
     const [isDarkModeEnabled, setDarkModeEnabled] = useState(false);
-
+    
     const onHandleToggleSwitch = () => setDarkModeEnabled(previousState => !previousState);
 
     return (
-        <View style={styles.container}>
-            <View style={styles.settingContainer}>
-                <Text style={styles.title}>Modo Oscuro</Text>
-                <Switch
-                    trackColor={{ false: "#767577", true: "#81b0ff" }}
-                    thumbColor={isDarkModeEnabled ? "#f5dd4b" : "#f4f3f4"}
-                    ios_backgroundColor="#3e3e3e"
-                    onValueChange={onHandleToggleSwitch}
-                    value={isDarkModeEnabled}
-                />
-            </View>
-        </View>
+        <ScrollView style={styles.container} contentContainerStyle={styles.containerScroll}>
+            <SettingOption 
+                title="Modo Oscuro" 
+                isEnabled={isDarkModeEnabled} 
+                onHandleToggleOption={onHandleToggleSwitch} />
+        </ScrollView>
     );
 };
 

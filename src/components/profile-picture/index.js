@@ -4,7 +4,7 @@ import { styles } from './styles';
 
 const ProfilePicture = () => {
     return (
-        <View style={styles.inputContainer}>
+        <View style={styles.container}>
             <Text>Profile Picture</Text>
       </View>
     )
