@@ -2,8 +2,6 @@ import { useFonts } from 'expo-font';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import AppNavigator from './navigation';
 
-import { Home } from './screens';
-
 export default function App() {
   const [loaded] = useFonts({
     'Karla-Bold': require('../assets/fonts/Karla-Bold.ttf'),

@@ -9,6 +9,7 @@ import { styles } from "./styles";
 const Profile = ({ navigation }) => {
     return (
         <View style={styles.container}>
+            
             <View style={styles.profilePicture}>
                 <Ionicons 
                     name='person'

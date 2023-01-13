@@ -6,14 +6,29 @@ import { COLORS } from "../../constants/themes/colors";
 import { styles } from "./styles";
 
 const UserDetails = ({ navigation }) => {
+    
+    const pictureUri = "https://media.revistagq.com/photos/62a0a996223a33e985e4d59a/master/pass/1072434_110615-cc-Darth-Vader-Thumb.jpg";
+    
+    const onHandlePictureDetail = () => {
+        if (pictureUri)
+            navigation.navigate('UserPicture', { pictureUri: pictureUri });
+    };
+
     return (
         <View style={styles.container}>
-            <View style={styles.profilePicture}>
-                <Ionicons 
-                    name='person'
-                    size={90}
-                    color={COLORS.backgroundLight}
-                />
+            
+            <TouchableOpacity activeOpacity={pictureUri ? 0.85 : 1} style={styles.profilePicture} onPress={onHandlePictureDetail}>
+                {
+                    pictureUri ? 
+                        <Image style={styles.image} source={{ uri: pictureUri }} />
+                    :
+                        <Ionicons 
+                            name='person'
+                            size={90}
+                            color={COLORS.backgroundLight}
+                        />
+                }
+            
                 <TouchableOpacity style={styles.takePhoto} onPress={() => null}>
                     <MaterialCommunityIcons 
                         name='camera'
@@ -21,7 +36,7 @@ const UserDetails = ({ navigation }) => {
                         color={COLORS.black}
                     />
                 </TouchableOpacity>
-            </View>
+            </TouchableOpacity>
 
             <View style={styles.settingContainer}>
                 <Text style={styles.title}>Nombre de Usuario</Text>

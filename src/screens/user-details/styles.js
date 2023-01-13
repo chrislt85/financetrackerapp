@@ -20,6 +20,11 @@ export const styles = StyleSheet.create({
         justifyContent: "center",
         backgroundColor: COLORS.gray,
     },
+    image: {
+        width: 150,
+        height: 150,
+        borderRadius: 80,
+    },
     takePhoto: {
         position: 'absolute', 
         top: 105, 

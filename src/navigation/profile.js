@@ -1,7 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { Profile, UserDetails, UserSettings } from "../screens";
+import { Profile, UserDetails, UserPicture, UserSettings } from "../screens";
 import { COLORS } from '../constants/themes/colors';
 
 const Stack = createNativeStackNavigator();
@@ -29,6 +29,13 @@ const ProfileNavigator = () => {
                 options={{
                     title: 'Perfil',
                     //headerShown: false,
+                }}
+            />
+            <Stack.Screen 
+                name='UserPicture' 
+                component={UserPicture} 
+                options={{
+                    title: 'Foto del Perfil',
                 }}
             />
             <Stack.Screen 
