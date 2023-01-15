@@ -2,50 +2,65 @@ export const CATEGORIES = [
     {
         id: 1,
         title: 'Alimentación',
-        picturePath: 'https://cdn.pixabay.com/photo/2013/07/13/01/22/vegetables-155616__480.png',
+        icon: 'food',
         color: '#99CAFF',
+        amount: 300.00
     },
     {
         id: 2,
         title: 'Farmacias y Salud',
-        picturePath: '',
+        icon: 'medical-bag',
         color: '#6FBAEC',
+        amount: 400.00
     },
     {
         id: 3,
         title: 'Transporte',
-        picturePath: '',
+        icon: 'car',
         color: '#A5D4F3',
+        amount: 500.00
     },
     {
         id: 4,
         title: 'Ocio',
-        picturePath: '',
+        icon: 'beach',
         color: '#6EA5D8',
+        amount: 0.00
     },
     {
         id: 5,
         title: 'Ropa y Accesorios',
-        picturePath: '',
+        icon: 'tshirt-crew',
         color: '#6EA5D8',
+        amount: 100.00
     },
     {
         id: 6,
         title: 'Vivienda y hogar',
-        picturePath: '',
+        icon: 'home-analytics',
         color: '#6EA5D8',
+        amount: 1000.00
     },
     {
         id: 7,
         title: 'Tarjetas y Facturas',
-        picturePath: '',
+        icon: 'credit-card',
         color: '#6EA5D8',
+        amount: 100.00
     },
     {
         id: 8,
-        title: 'Extras',
-        picturePath: '',
+        title: 'Educación',
+        icon: 'book-education',
         color: '#6EA5D8',
+        amount: 0.00
+    },
+    {
+        id: 9,
+        title: 'Otros',
+        icon: 'dots-horizontal',
+        color: '#6EA5D8',
+        amount: 30.00
     },
 ];
 

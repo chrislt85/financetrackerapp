@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { styles } from './styles';
 
-const ProfilePicture = () => {
+const ProfileAvatar = () => {
     return (
         <View style={styles.container}>
             <Text>Profile Picture</Text>
@@ -10,4 +10,4 @@ const ProfilePicture = () => {
     )
 }
 
-export default ProfilePicture;
+export default ProfileAvatar;
