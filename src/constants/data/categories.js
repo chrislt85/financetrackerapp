@@ -4,14 +4,14 @@ export const CATEGORIES = [
         title: 'Alimentación',
         icon: 'food',
         color: '#99CAFF',
-        amount: 300.00
+        amount: 5100.00
     },
     {
         id: 2,
         title: 'Farmacias y Salud',
         icon: 'medical-bag',
         color: '#6FBAEC',
-        amount: 400.00
+        amount: 4000.00
     },
     {
         id: 3,
@@ -32,21 +32,21 @@ export const CATEGORIES = [
         title: 'Ropa y Accesorios',
         icon: 'tshirt-crew',
         color: '#6EA5D8',
-        amount: 100.00
+        amount: 12000.00
     },
     {
         id: 6,
         title: 'Vivienda y hogar',
         icon: 'home-analytics',
         color: '#6EA5D8',
-        amount: 1000.00
+        amount: 50000.00
     },
     {
         id: 7,
         title: 'Tarjetas y Facturas',
         icon: 'credit-card',
         color: '#6EA5D8',
-        amount: 100.00
+        amount: 10000.00
     },
     {
         id: 8,

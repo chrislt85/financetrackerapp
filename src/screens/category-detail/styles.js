@@ -4,13 +4,20 @@ import { COLORS } from '../../constants/themes/colors';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
+        //justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: COLORS.backgroundLight,
+        paddingTop: 10,
+    },
+    expensesContainer: {
+        flex: 1,
+    },
+    emptyList: {
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: COLORS.backgroundLight ,
-    },
-    title: {
-        fontFamily: 'Rubik-Bold',
-        fontSize: 20,
-        color: COLORS.text,
-    },
+        fontFamily: 'Karla-Regular',
+        fontSize: 16,
+        color: COLORS.black,
+    }
 });
