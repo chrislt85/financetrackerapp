@@ -3,6 +3,8 @@ import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
 import { Ionicons, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 //import { ConfigButton } from '../../components';
 
+import { ProfileAvatar } from "../../components";
+
 import { COLORS } from "../../constants/themes/colors";
 import { styles } from "./styles";
 
@@ -10,13 +12,8 @@ const Profile = ({ navigation }) => {
     return (
         <View style={styles.container}>
             
-            <View style={styles.profilePicture}>
-                <Ionicons 
-                    name='person'
-                    size={90}
-                    color={COLORS.backgroundLight}
-                />
-            </View>
+            <ProfileAvatar pictureUri={null} isEditable={false} onHandlePictureDetail={() => null} onHandleTakePicture={() => null} />
+
             <Text style={styles.profileName}>Will Kim</Text>
             
             <TouchableOpacity style={styles.configButton} onPress={() => navigation.navigate('UserDetails')}>

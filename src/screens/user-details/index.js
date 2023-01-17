@@ -1,8 +1,8 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity, Button } from 'react-native';
-import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { View, Text/*, Image, TouchableOpacity*/, Button } from 'react-native';
+//import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
-import { SettingInput } from "../../components";
+import { ProfileAvatar, SettingInput } from "../../components";
 import { COLORS } from "../../constants/themes/colors";
 import { styles } from "./styles";
 
@@ -18,26 +18,7 @@ const UserDetails = ({ navigation }) => {
     return (
         <View style={styles.container}>
             
-            <TouchableOpacity activeOpacity={pictureUri ? 0.85 : 1} style={styles.profilePicture} onPress={onHandlePictureDetail}>
-                {
-                    pictureUri ? 
-                        <Image style={styles.image} source={{ uri: pictureUri }} />
-                    :
-                        <Ionicons 
-                            name='person'
-                            size={90}
-                            color={COLORS.backgroundLight}
-                        />
-                }
-            
-                <TouchableOpacity style={styles.takePhoto} onPress={() => null}>
-                    <MaterialCommunityIcons 
-                        name='camera'
-                        size={24}
-                        color={COLORS.black}
-                    />
-                </TouchableOpacity>
-            </TouchableOpacity>
+            <ProfileAvatar pictureUri={pictureUri} isEditable={true} onHandlePictureDetail={onHandlePictureDetail} onHandleTakePicture={() => null} />
 
             <SettingInput title="Nombre de Usuario" content="Will Kim" />
 

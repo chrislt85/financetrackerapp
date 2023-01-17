@@ -8,18 +8,6 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: COLORS.backgroundLight,
     },
-    profilePicture: {
-        width: 150,
-        height: 150,
-        borderRadius: 80,
-        marginVertical: 30,
-        //borderColor: COLORS.secondaryDark,
-        //borderWidth: 2,
-        //borderStyle: "dashed",// "dotted",
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: COLORS.gray,
-    },
     profileName: {
         fontFamily: 'Rubik-Bold',
         fontSize: 20,
