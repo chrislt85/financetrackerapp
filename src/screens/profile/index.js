@@ -1,9 +1,8 @@
 import React from "react";
 import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
 import { Ionicons, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
-//import { ConfigButton } from '../../components';
 
-import { ProfileAvatar } from "../../components";
+import { ProfileAvatar, SettingButton } from "../../components";
 
 import { COLORS } from "../../constants/themes/colors";
 import { styles } from "./styles";
@@ -16,41 +15,8 @@ const Profile = ({ navigation }) => {
 
             <Text style={styles.profileName}>Will Kim</Text>
             
-            <TouchableOpacity style={styles.configButton} onPress={() => navigation.navigate('UserDetails')}>
-                <View style={styles.configButtonContainer}>
-                        <Ionicons 
-                            name='md-person-circle-outline'
-                            size={40}
-                            color={COLORS.primaryDark}
-                        />
-                    <Text style={styles.configButtonText}>Detalle de Usuario</Text>
-                    <View style={styles.configButtonIconContainer}>
-                    <MaterialCommunityIcons
-                        name='chevron-right'
-                        size={40}
-                        color={COLORS.text}
-                    />
-                    </View>
-                </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.configButton} onPress={() => navigation.navigate('UserSettings')}>
-                <View style={styles.configButtonContainer}>
-                        <MaterialIcons 
-                            name='settings'
-                            size={40}
-                            color={COLORS.primaryDark}
-                        />
-                    <Text style={styles.configButtonText}>Configuraciones</Text>
-                    <View style={styles.configButtonIconContainer}>
-                    <MaterialCommunityIcons
-                        name='chevron-right'
-                        size={40}
-                        color={COLORS.text}
-                    />
-                    </View>
-                </View>
-            </TouchableOpacity>
+            <SettingButton title="Detalle de Usuario" icon="md-person-circle-outline" onSelect={() => navigation.navigate('UserDetails')} />
+            <SettingButton title="Configuraciones" icon="settings-sharp" onSelect={() => navigation.navigate('UserSettings')} />
                         
             <TouchableOpacity style={styles.logoutButton} onPress={() => null}>
                 <Text style={styles.logoutButtonText}>Desloguear</Text>
