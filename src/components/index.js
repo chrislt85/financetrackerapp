@@ -1,3 +1,6 @@
+export { default as Input } from './input';
+export { default as Label } from './label';
+
 export { default as PieChart } from './pie-chart';
 export { default as CategoryItem } from './category-item';
 export { default as ExpenseItem } from './expense-item';

@@ -1,15 +1,21 @@
-import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-//import HomeNavigator from "./home";
-//import ExpensesNavigator from "./expenses";
-//import IncomesNavigator from "./incomes";
-// import ProfileNavigator from "./profile";
+import React from "react";
+import { useSelector } from 'react-redux';
+
+import AuthNavigator from './auth';
 import TabsNavigator from "./tabs";
 
 const AppNavigator = () => {
+    const userId = useSelector((state) => state.auth.userId);
+
     return (
         <NavigationContainer>
-            <TabsNavigator />
+            {
+                userId ? 
+                    <TabsNavigator />
+                :
+                    <AuthNavigator />
+            }
         </NavigationContainer>
     );
 };
