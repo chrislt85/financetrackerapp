@@ -12,7 +12,7 @@ const BottomTab = createBottomTabNavigator();
 const Tabs = () => {
     return (
         <BottomTab.Navigator
-            initialRouteName="HomeTab"
+            initialRouteName="ExpensesTab"
             screenOptions={{
                 headerShown: false,
                 tabBarLabelStyle: {
@@ -28,7 +28,7 @@ const Tabs = () => {
                 }
             }}
         >
-            <BottomTab.Screen 
+            {/*<BottomTab.Screen 
                 name="HomeTab"
                 component={HomeNavigator}
                 options={{
@@ -41,7 +41,7 @@ const Tabs = () => {
                          />
                     ),
                 }}
-            />
+            />*/}
             <BottomTab.Screen 
                 name="ExpensesTab"
                 component={ExpensesNavigator}
@@ -56,7 +56,7 @@ const Tabs = () => {
                     )
                 }}
             />
-            <BottomTab.Screen 
+            {/*<BottomTab.Screen 
                 name="IncomesTab"
                 component={IncomesNavigator}
                 options={{
@@ -69,7 +69,7 @@ const Tabs = () => {
                          />
                     )
                 }}
-            />
+            />*/}
             <BottomTab.Screen 
                 name="ProfileTab"
                 component={ProfileNavigator}

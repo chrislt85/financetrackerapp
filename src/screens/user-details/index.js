@@ -29,8 +29,6 @@ const UserDetails = ({ navigation }) => {
             {
                 // Aca puedo pasar el content como children (y pasar Text, Button o lo que sea)
             }
-            <SettingInput title="Correo Electrónico" content="will@test.com.ar" />
-            <SettingInput title="Contraseña" content="***********" />
         </View>
     );
 };

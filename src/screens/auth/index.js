@@ -90,7 +90,12 @@ const Auth = ({ navigation }) => {
           touched={formState.password.touched}
           onChangeText={(text) => onHandleChangeInput(text, 'password')}
         />
-        <Text style={styles.error}>{errorMessage}</Text>
+        {
+          errorMessage ?
+            <Text style={styles.error}>{errorMessage}</Text>
+          : 
+            null
+        }
         <Button
           color={COLORS.primaryDark}
           title={messageAction}

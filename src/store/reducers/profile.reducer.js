@@ -1,7 +1,8 @@
 /* eslint-disable no-case-declarations */
 import { sumTotal } from '../../utils';
-import { cartTypes } from '../types';
-const { ADD_TO_CART, REMOVE_FROM_CART, CONFIRM_ORDER } = cartTypes;
+import { profileTypes } from '../types';
+const { ADD_TO_CART, REMOVE_FROM_CART, CONFIRM_ORDER } = profileTypes;
+
 const initialState = {
   items: [],
   total: 0,

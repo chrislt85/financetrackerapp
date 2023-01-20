@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingVertical: 15,
+        paddingVertical: 20,
     },
     title: {
         fontFamily: 'Rubik-Bold',
@@ -23,5 +23,6 @@ export const styles = StyleSheet.create({
     },
     categoriesContainer: {
         flex: 1,
+        width: '90%',
     },
 });

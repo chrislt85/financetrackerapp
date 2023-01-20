@@ -11,10 +11,10 @@ const AppNavigator = () => {
     return (
         <NavigationContainer>
             {
-                userId ? 
+                //userId ? 
                     <TabsNavigator />
-                :
-                    <AuthNavigator />
+                //:
+                //    <AuthNavigator />
             }
         </NavigationContainer>
     );

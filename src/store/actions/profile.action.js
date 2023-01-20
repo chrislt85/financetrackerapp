@@ -1,7 +1,7 @@
 import { URL_BASE } from '../../constants/firebase';
-import { cartTypes } from '../types';
+import { profileTypes } from '../types';
 
-const { ADD_TO_CART, REMOVE_FROM_CART, CONFIRM_ORDER } = cartTypes;
+const { ADD_TO_CART, REMOVE_FROM_CART, CONFIRM_ORDER } = profileTypes;
 
 export const addToCart = (item) => ({
   type: ADD_TO_CART,
