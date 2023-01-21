@@ -1,55 +1,30 @@
 /* eslint-disable no-case-declarations */
-import { sumTotal } from '../../utils';
 import { profileTypes } from '../types';
-const { ADD_TO_CART, REMOVE_FROM_CART, CONFIRM_ORDER } = profileTypes;
+
+const { SAVE_PROFILE, SAVE_SETTINGS } = profileTypes;
 
 const initialState = {
-  items: [],
-  total: 0,
-  loading: false,
-  error: null,
+  userPicture: '',
+  userName: '',
+  userLocation: '',
+  darkMode: false,
 };
 
-const cartReducer = (state = initialState, action) => {
+const profileReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_TO_CART:
-      let updatedCart = [];
-      if (state.items.find((item) => item.id === action.item.id)) {
-        updatedCart = state.items.map((item) => {
-          if (item.id === action.item.id) item.quantity += 1;
-          return item;
-        });
-      } else {
-        const item = { ...action.item, quantity: 1 };
-        updatedCart = [...state.items, item];
-      }
+    case SAVE_PROFILE:
       return {
-        ...state,
-        items: updatedCart,
-        total: sumTotal(updatedCart),
+        userPicture: action.userPicture,
+        userName: action.userName,
+        userLocation: action.userLocation,
       };
-    case REMOVE_FROM_CART:
-      const filteredCart = state.items.filter((item) => item.id !== action.id);
+    case SAVE_SETTINGS:
       return {
-        ...state,
-        items: filteredCart,
-        total: sumTotal(filteredCart),
-      };
-    case CONFIRM_ORDER:
-      if (action.result) {
-        return {
-          ...state,
-          items: [],
-          total: 0,
-        };
-      }
-      return {
-        ...state,
-        error: action.error,
+        darkMode: action.darkMode,
       };
     default:
       return state;
   }
 };
 
-export default cartReducer;
+export default profileReducer;
