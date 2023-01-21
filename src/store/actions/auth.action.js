@@ -17,11 +17,25 @@ export const signUp = (email, password) => {
           returnSecureToken: true,
         }),
       });
-      if (!response.ok) {
-        throw new Error('Algo salió mal!');
+
+      if (!response.ok) 
+      {
+          const data = await response.json();
+          let errorMessage = "";
+          if (data.error)
+          {
+              errorMessage = (data.error.message === "EMAIL_EXISTS") ? "El Correo electrónico ingresado ya se encuentra registrado" : "Error al registrarse";
+          }
+          else
+          {
+              errorMessage = 'Algo salió mal!';
+          }
+
+          throw new Error(errorMessage);
       }
 
       const data = await response.json();
+      // console.warn(data);
 
       dispatch({
         type: SIGN_UP,
