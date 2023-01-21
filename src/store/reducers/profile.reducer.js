@@ -14,12 +14,14 @@ const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case SAVE_PROFILE:
       return {
+        ...state,
         userPicture: action.item.userPicture,
         userName: action.item.userName,
         userLocation: action.item.userLocation,
       };
     case SAVE_SETTINGS:
       return {
+        ...state,
         darkMode: action.darkMode,
       };
     default:

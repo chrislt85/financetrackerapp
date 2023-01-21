@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { View, Text/*, Image, TouchableOpacity*/, Button } from 'react-native';
 //import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
-import { ProfileAvatar, SettingInput } from "../../components";
+import { ProfileAvatar, ProfileLocation, SettingInput } from "../../components";
 import { saveProfile } from '../../store/actions';
 
 import { COLORS } from "../../constants/themes/colors";
@@ -15,10 +15,12 @@ const UserDetails = ({ navigation }) => {
 
     const [profilePicture, setProfilePicture] = useState(null);
     const [profileName, setProfileName] = useState(null);
+    const [profileLocation, setProfileLocation] = useState(null);
     
     useEffect(() => {
         setProfilePicture(profileInfo?.userPicture);
         setProfileName(profileInfo?.userName);
+        setProfileLocation(profileInfo?.userLocation);
       }, []);
 
     const onHandlePictureDetail = () => {
@@ -27,12 +29,16 @@ const UserDetails = ({ navigation }) => {
     };
 
     const onHandleSaveProfile = () => {
-        dispatch(saveProfile({ userPicture: profilePicture, userName: profileName, userLocation: null }));
+        dispatch(saveProfile({ userPicture: profilePicture, userName: profileName, userLocation: profileLocation }));
         navigation.navigate('Profile');
     }
 
     const onImageSelection = (uri) => {
         setProfilePicture(uri);
+    };
+
+    const onLocationSelection = (location) => {
+        setProfileLocation(location);
     };
 
     return (
@@ -42,13 +48,7 @@ const UserDetails = ({ navigation }) => {
 
             <SettingInput title="Nombre de Usuario" content={profileName} />
 
-            <View style={styles.settingContainer}>
-                <Text style={styles.title}>Ubicación</Text>
-                <Button title="Detectar ubicación" color={COLORS.primary} onPress={() => null} />
-            </View>
-            {
-                // Aca puedo pasar el content como children (y pasar Text, Button o lo que sea)
-            }
+            <ProfileLocation profileLocation={profileLocation} onLocationSelection={onLocationSelection} />            
             
             <View style={styles.saveButton}>
                 <Button title="Guardar" color={COLORS.primaryDark} onPress={onHandleSaveProfile} />
