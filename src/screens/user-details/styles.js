@@ -30,4 +30,7 @@ export const styles = StyleSheet.create({
         fontSize: 15,
         //color: COLORS.gray,
     },
+    saveButton: {
+        marginTop: 40,
+    },
 });
