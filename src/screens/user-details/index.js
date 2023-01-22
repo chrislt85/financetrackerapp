@@ -41,12 +41,15 @@ const UserDetails = ({ navigation }) => {
         setProfileLocation(location);
     };
 
+    const onHandleChangeName = (name) => setProfileName(name);
+
+
     return (
         <View style={styles.container}>
             
             <ProfileAvatar pictureUri={profilePicture} isEditable={true} onHandlePictureDetail={onHandlePictureDetail} onImageSelection={onImageSelection} />
 
-            <SettingInput title="Nombre de Usuario" content={profileName} />
+            <SettingInput title="Nombre de Usuario" content={profileName} onHandleChange={onHandleChangeName} />
 
             <ProfileLocation profileLocation={profileLocation} onLocationSelection={onLocationSelection} />            
             

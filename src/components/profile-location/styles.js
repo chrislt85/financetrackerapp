@@ -9,8 +9,10 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         borderBottomWidth: 1,
         borderBottomColor: COLORS.gray,
-        paddingVertical: 7,
-        marginTop: 7,
+        paddingVertical: 15,
+        //paddingTop: 15,
+        //paddingBottom: 5,
+        marginTop: 10,
     },
     title: {
         fontFamily: 'Karla-Bold',

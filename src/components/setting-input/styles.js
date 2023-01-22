@@ -9,8 +9,8 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         borderBottomWidth: 1,
         borderBottomColor: COLORS.gray,
-        paddingVertical: 7,
-        marginTop: 7,
+        //paddingVertical: 7,
+        marginTop: 10,
     },
     title: {
         fontFamily: 'Karla-Bold',
@@ -18,9 +18,21 @@ export const styles = StyleSheet.create({
         //marginLeft: 15,
         color: COLORS.text,
     },
+    inputContainer:{
+        marginVertical: 10,
+    },
     content: {
+        paddingTop:4,
+        paddingBottom:2,
+        width: 150,
+        //height: 35,
+        borderBottomWidth: 1,
+        borderBottomColor: '#968E85',
+        //alignItems:'flex-end',
+        textAlign: 'right',
         fontFamily: 'Karla-Regular',
-        fontSize: 15,
+        fontSize: 14,
         //color: COLORS.gray,
+        //backgroundColor: COLORS.backgroundDark,
     },
 });

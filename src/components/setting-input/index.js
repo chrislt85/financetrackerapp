@@ -1,13 +1,20 @@
 import React from "react";
-import { View, Text } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 import { styles } from './styles';
 
-const SettingInput = ({ title, content }) => {
+const SettingInput = ({ title, content, onHandleChange }) => {
 
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{title}</Text>
-            <Text style={styles.content}>{content}</Text>
+            <View style={styles.inputContainer}>
+                <TextInput 
+                    style={styles.content} 
+                    value={content}
+                    placeholder="Ingrese nombre"
+                    onChangeText={onHandleChange}
+                />
+            </View>
         </View>
     );
 }
