@@ -17,7 +17,7 @@ export const init = () => {
 }
 
 export const generateProfile = (userId) => {
-
+    // Genera un nuevo perfil vacío para el userId indicado
     const promise = new Promise((resolve, reject) => {
         db.transaction((tx) => {
             tx.executeSql('INSERT INTO profile (userId, userPicture, userName, userLocation, darkMode) SELECT ?, ?, ?, ?, ? WHERE NOT EXISTS (SELECT 1 FROM profile WHERE userId = ?);', 
@@ -62,10 +62,10 @@ export const editSettings = (userId, darkMode) => {
 }
 
 export const fetchProfile = (userId) => {
-
+    // Devuelve el perfil correspondiente al userId
     const promise = new Promise((resolve, reject) => {
         db.transaction((tx) => {
-            tx.executeSql('SELECT * FROM profile WHERE userId = ?;', 
+            tx.executeSql('SELECT * FROM profile WHERE userId = ? LIMIT 1;', 
                 [userId], 
                 (_, result) => resolve(result), 
                 (_, err) => reject(err)

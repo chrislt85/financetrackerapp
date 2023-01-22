@@ -9,12 +9,12 @@ export const styles = StyleSheet.create({
         backgroundColor: COLORS.backgroundLight,
         paddingTop: 30,
     },
-    /*profileName: {
+    profileName: {
         fontFamily: 'Rubik-Bold',
         fontSize: 20,
         color: COLORS.text,
         marginBottom: 30,
-    },*/
+    },
     logoutButton: {
         marginTop: 40,
         width: '90%',

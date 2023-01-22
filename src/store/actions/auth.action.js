@@ -39,7 +39,7 @@ export const signUp = (email, password) => {
       // console.warn(data);
      
       const result = await generateProfile(data.localId);
-      console.warn(result);
+      //console.warn(result);
 
       dispatch({
         type: SIGN_UP,
@@ -75,7 +75,7 @@ export const signIn = (email, password) => {
       }
 
       const result = await generateProfile(data.localId);
-      console.warn(result);
+      //console.warn(result);
 
       dispatch({
         type: SIGN_IN,

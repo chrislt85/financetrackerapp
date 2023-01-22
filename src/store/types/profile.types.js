@@ -1,4 +1,5 @@
 export const profileTypes = {
+  LOAD_PROFILE: 'LOAD_PROFILE',
   SAVE_PROFILE: 'SAVE_PROFILE',
   SAVE_SETTINGS: 'SAVE_SETTINGS'
 };

@@ -4,21 +4,26 @@ import { View, Text/*, Image, TouchableOpacity*/, Button } from 'react-native';
 //import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 import { ProfileAvatar, ProfileLocation, SettingInput } from "../../components";
-import { saveProfile } from '../../store/actions';
+import { loadProfile, saveProfile } from '../../store/actions';
 
 import { COLORS } from "../../constants/themes/colors";
 import { styles } from "./styles";
 
 const UserDetails = ({ navigation }) => {
     const dispatch = useDispatch();
+    const userId = useSelector((state) => state.auth.userId);
     const profileInfo = useSelector((state) => state.profile);
-    //const userId = useSelector((state) => state.auth.userId);
-
     const [profilePicture, setProfilePicture] = useState(null);
     const [profileName, setProfileName] = useState(null);
     const [profileLocation, setProfileLocation] = useState(null);
     
     useEffect(() => {
+        //console.log('loadProfile', profileInfo);
+        dispatch(loadProfile(userId));
+    }, [dispatch]); 
+    
+    useEffect(() => {
+        //console.log('profileInfo', profileInfo);
         setProfilePicture(profileInfo?.userPicture);
         setProfileName(profileInfo?.userName);
         setProfileLocation(profileInfo?.userLocation);
@@ -30,7 +35,7 @@ const UserDetails = ({ navigation }) => {
     };
 
     const onHandleSaveProfile = () => {
-        dispatch(saveProfile({ userPicture: profilePicture, userName: profileName, userLocation: profileLocation }));
+        dispatch(saveProfile(userId, { userPicture: profilePicture, userName: profileName, userLocation: profileLocation }));
         navigation.navigate('Profile');
     }
 
@@ -43,7 +48,6 @@ const UserDetails = ({ navigation }) => {
     };
 
     const onHandleChangeName = (name) => setProfileName(name);
-
 
     return (
         <View style={styles.container}>
