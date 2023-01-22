@@ -11,3 +11,7 @@ export const saveSettings = (darkMode) => ({
   type: SAVE_SETTINGS,
   darkMode,
 });
+
+// ver places.slice de ejemplo profesor >> conexion SQLite/Redux
+// ver lo que entregue yo tmb
+// ver si esto no resuelve el problema del profile que no refrescaba el perfil

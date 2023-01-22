@@ -23,7 +23,8 @@ const Expenses = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <PieChart />
+            
+            {/*<PieChart />*/}
 
             <View style={styles.titleContainer}>
                 <Text style={styles.title}>CATEGORÍAS</Text>

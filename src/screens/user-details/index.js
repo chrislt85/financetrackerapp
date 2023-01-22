@@ -12,6 +12,7 @@ import { styles } from "./styles";
 const UserDetails = ({ navigation }) => {
     const dispatch = useDispatch();
     const profileInfo = useSelector((state) => state.profile);
+    //const userId = useSelector((state) => state.auth.userId);
 
     const [profilePicture, setProfilePicture] = useState(null);
     const [profileName, setProfileName] = useState(null);

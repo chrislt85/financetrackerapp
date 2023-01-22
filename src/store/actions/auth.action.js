@@ -1,5 +1,6 @@
 import { URL_AUTH_SIGN_UP, URL_AUTH_SIGN_IN } from '../../constants/firebase';
 import { auhtTypes } from '../types';
+import { generateProfile } from '../../db';
 
 const { SIGN_IN, SIGN_UP, SIGN_OUT } = auhtTypes;
 
@@ -36,6 +37,9 @@ export const signUp = (email, password) => {
 
       const data = await response.json();
       // console.warn(data);
+     
+      const result = await generateProfile(data.localId);
+      console.warn(result);
 
       dispatch({
         type: SIGN_UP,
@@ -69,6 +73,10 @@ export const signIn = (email, password) => {
           let errorMessage = ((data.error.message === "EMAIL_NOT_FOUND") || (data.error.message === "INVALID_PASSWORD")) ? "Correo electrónico o contraseña incorrecta" : "Error al iniciar sesión";
           throw new Error(errorMessage);
       }
+
+      const result = await generateProfile(data.localId);
+      console.warn(result);
+
       dispatch({
         type: SIGN_IN,
         token: data.idToken,
