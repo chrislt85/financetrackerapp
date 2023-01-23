@@ -31,6 +31,19 @@ export const validateInput = (name, value) => {
         error = '';
       }
       break;
+    case 'amount':
+      if (!(!isNaN(value) &&
+         !isNaN(parseFloat(value))))
+      {
+        hasError = true;
+        error = 'Se requiere un valor decimal';
+      }
+      else if (parseFloat(value) < 0)
+      {
+        hasError = true;
+        error = 'Se requiere un valor mayor a 0';
+      }
+      break;
     default:
       break;
   }
@@ -40,7 +53,6 @@ export const validateInput = (name, value) => {
 export const onInputChange = (name, value, dispatch, formState) => {
   const { hasError, error } = validateInput(name, value);
   let isFormValid = true;
-
   for (const key in formState) {
     const item = formState[key];
     if (key !== name && hasError) {

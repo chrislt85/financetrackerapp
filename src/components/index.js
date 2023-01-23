@@ -1,5 +1,8 @@
 export { default as Input } from './input';
 export { default as Label } from './label';
+export { default as Dropdown } from './dropdown';
+export { default as DatetimePicker } from './datetime-picker';
+export { default as ModalDeleteItem } from './modal';
 
 export { default as PieChart } from './pie-chart';
 export { default as CategoryItem } from './category-item';

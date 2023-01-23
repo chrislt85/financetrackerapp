@@ -1,15 +1,9 @@
-import { URL_BASE } from '../../constants/firebase';
+//import { URL_BASE } from '../../constants/firebase';
 import { expensesTypes } from '../types';
 
-const { GET_EXPENSES, ADD_EXPENSE, REMOVE_EXPENSE } = expensesTypes;
+const { /*GET_EXPENSES,*/ SELECT_EXPENSE, FILTER_EXPENSES, ADD_EXPENSE, REMOVE_EXPENSE } = expensesTypes;
 
-/*export const addExpense = (item) => ({
-  type: ADD_EXPENSE,
-  item,
-});*/
-
-/////////////////////////////////////////////////////////////////////
-export const addExpense = (item) => {
+/*export const addExpense = (item) => {
   return async (dispatch) => {
     try {
       const response = await fetch(`${URL_BASE}/expenses.json`, {
@@ -35,9 +29,9 @@ export const addExpense = (item) => {
       });
     }
   };
-};
+};*/
 
-export const removeExpense = (id) => {
+/*export const removeExpense = (id) => {
   return async (dispatch) => {
     try {
       const response = await fetch(`${URL_BASE}/expenses/${id}.json`, {
@@ -57,14 +51,8 @@ export const removeExpense = (id) => {
       console.log(error);
     }
   };
-};
-
-/////////////////////////////////////////////////////////////////////
-/*export const filterExpenses = (id) => ({
-  type: FILTER_EXPENSES,
-  categoryId: id,
-});*/
-
+};*/
+/*
 export const getExpenses = (id) => {
   return async (dispatch) => {
     try {
@@ -93,6 +81,29 @@ export const getExpenses = (id) => {
     }
   };
 };
+*/
+/////////////////////////////////////////////////////////////////////
+export const addExpense = (item) => ({
+  type: ADD_EXPENSE,
+  expense: item,
+});
+
+export const removeExpense = (id) => ({
+  type: REMOVE_EXPENSE,
+  expenseId: id,
+});
+
+export const selectExpense = (id) => ({
+  type: SELECT_EXPENSE,
+  expenseId: id,
+});
+
+export const filterExpenses = (id) => ({
+  type: FILTER_EXPENSES,
+  categoryId: id,
+});
+
+
 
 
 

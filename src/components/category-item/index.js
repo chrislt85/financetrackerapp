@@ -15,7 +15,7 @@ const CategoryItem = ({ item, onSelected }) => {
                 />
                 <View style={styles.categoryInfoContainer}>
                     <Text style={styles.title}>{item.title}</Text>
-                    <Text style={styles.amount}>${item.amount}</Text>
+                    {/*<Text style={styles.amount}>${item.amount}</Text>*/}
                 </View>
                 <View style={styles.categoryButtonContainer}>
                     <MaterialCommunityIcons

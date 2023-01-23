@@ -24,9 +24,9 @@ export const styles = StyleSheet.create({
         //backgroundColor: 'red',
     },
     title: {
-        fontFamily: 'Karla-Light',
+        fontFamily: 'Karla-Regular',
         fontSize: 15,
-        color: COLORS.gray,
+        color: COLORS.text,
     },
     amount: {
         //marginTop: 1,
